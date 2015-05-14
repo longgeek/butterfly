@@ -21,6 +21,9 @@ print("""
 
     {title}在浏览器中如何使用快捷键复制粘贴？{reset}
 
+        {strong}使用鼠标右键来复制内容，粘贴使用 [Ctrl] + [v] 或 [Ctrl] + [Shite] + [v]
+        {strong}如果不起作用，尝试下面方法：
+
         {strong}(1). 进入复制粘贴模式
             {reset}[Alt] + [z]
 
