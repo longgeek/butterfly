@@ -11,15 +11,21 @@
 
     <title>PythonPie</title>
     <link href="/style.css" rel="stylesheet">
+    <script src="{{ static_url('html-sanitizer.js') }}"></script>
+    <script src="{{ static_url('jquery-2.1.3.js') }}"></script>
+    <script src="{{ static_url('messenger.js') }}"></script>
+    <script src="{{ static_url('grab.js') }}"></script>
+    <script src="{{ static_url('main.js') }}"></script>
+    <script src="{{ static_url('ext.js') }}"></script>
+    <!--
+    <script src="{{ static_url('main.%sjs' % (
+                 '' if options.unminified else 'min.')) }}"></script>
+    <script src="{{ static_url('ext.%sjs' % (
+        '' if options.unminified else 'min.')) }}"></script> -->
   </head>
 
   <body spellcheck="false"
         data-force-unicode-width="{{ 'yes' if options.force_unicode_width else 'no' }}">
-    <script src="{{ static_url('html-sanitizer.js') }}"></script>
-    <script src="{{ static_url('main.%sjs' % (
-                 '' if options.unminified else 'min.')) }}"></script>
-    <script src="{{ static_url('ext.%sjs' % (
-                 '' if options.unminified else 'min.')) }}"></script>
     <div class="pull-center" id="reconnect" style="display: none;">
         <button class="btn-conn" onclick="location.reload();">Connect</button>
     </div>
