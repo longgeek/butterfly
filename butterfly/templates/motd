@@ -1,2 +1,2 @@
 {{ colors.blue }}pythonpie.com
-{{ colors.red }}For more information type: {{ colors.green }}# console_help {{ colors.white }}
+{{ colors.red }}Get more help information by linux shell command: {{ colors.green }}# console_help {{ colors.white }}
