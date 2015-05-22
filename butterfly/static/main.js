@@ -32,7 +32,7 @@
     wsUrl += document.location.host + '/ws' + location.pathname;
     ws = new WebSocket(wsUrl);
     ws.addEventListener('open', function() {
-      console.log("WebSocket open", arguments);
+      // console.log("WebSocket open", arguments);
       ws.send('R' + term.cols + ',' + term.rows);
       return openTs = (new Date()).getTime();
     });
@@ -65,7 +65,7 @@
       return queue = '';
     };
     ws.addEventListener('close', function() {
-      console.log("WebSocket closed", arguments);
+      // console.log("WebSocket closed", arguments);
       setTimeout(function() {
         term.write('Closed');
         term.skipNextKey = true;
@@ -948,7 +948,7 @@
                 break;
               default:
                 this.state = State.normal;
-                console.log("Unknown ESC control:", ch);
+                // console.log("Unknown ESC control:", ch);
             }
             break;
           case State.charset:
@@ -1331,6 +1331,9 @@
           key = "\t";
           break;
         case 13:
+          if (typeof(need_check) != "undefined") {
+            send_command();
+          }
           key = "\r";
           break;
         case 27:
