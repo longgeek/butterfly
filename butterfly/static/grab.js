@@ -19,8 +19,8 @@ messenger.listen(function(msg) {
 
 function current_command(type) {
     if (type == "linuxbash") {
-        command = $(".line > .cursor").parent().text().split(/[#|$]/);
-        if ( $(".line > .cursor").parent().text().split(/[#|$]/).length == 2 ) {
+        command = $(".line > .cursor").parent().text().split(/[#|$]\s/);
+        if ( $(".line > .cursor").parent().text().split(/[#|$]\s/).length == 2 ) {
             return command[1];
         } else {
             return command[0];
