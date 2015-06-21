@@ -67,9 +67,10 @@
     ws.addEventListener('close', function() {
       // console.log("WebSocket closed", arguments);
       setTimeout(function() {
-        term.write('Closed');
         term.skipNextKey = true;
-        document.getElementById("reconnect").style.display = "flex";
+        if (document.getElementById("reconnect")) {
+            document.getElementById("reconnect").style.display = "flex";
+        }
         return term.body.classList.add('dead');
       }, 1);
       quit = true;
@@ -2698,5 +2699,11 @@
   window.Terminal = Terminal;
 
 }).call(this);
+
+$(document).ready(function() {
+    if ( $(window).width() < 600 && $(window).height() < 600 ) {
+        $("#reconnect").remove();
+    };
+});
 
 //# sourceMappingURL=main.js.map
