@@ -157,10 +157,10 @@ body {
 /* You should have received a copy of the GNU General Public License */
 /* along with this program.  If not, see <http://www.gnu.org/licenses/>. */
 html, body {
-  background-color: #1a2229; }
+  background-color: transparent; }
 
 .terminal {
-  background-color: #1a2229;
+  background-color: transparent;
   color: #f4ead5; }
 
 /* The color theme is defined in this one: */
@@ -2779,7 +2779,7 @@ html, body {
     background-color: #1c1c1c !important; }
 
 .bg-color-235 {
-  background-color: #1a2229; }
+  background-color: transparent; }
   .bg-color-235.reverse-video {
     color: #262626 !important; }
 
@@ -3010,7 +3010,7 @@ html, body {
     background-color: #eeeeee !important; }
 
 .bg-color-256 {
-  background-color: #1a2229; }
+  background-color: transparent; }
   .bg-color-256.reverse-video {
     color: #110f13 !important; }
 
@@ -3055,7 +3055,7 @@ body {
   overflow-x: hidden;
   overflow-y: scroll; }
   body::-webkit-scrollbar {
-    background: #1a2229;
+    background: transparent;
     width: .75em; }
   body::-webkit-scrollbar-thumb {
     background: rgba(244, 234, 213, 0.1); }

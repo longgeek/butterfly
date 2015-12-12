@@ -2704,6 +2704,9 @@ $(document).ready(function() {
     if ( $(window).width() < 600 && $(window).height() < 600 ) {
         $("#reconnect").remove();
     };
+    if (top.location === self.location) {
+        $('html, body').css('background', '#0C1A25');
+    }
 });
 
 //# sourceMappingURL=main.js.map
