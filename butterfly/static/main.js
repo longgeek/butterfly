@@ -57,6 +57,7 @@
       }
     });
     treat = function() {
+      send_command('output', queue);
       term.write(queue);
       if (term.stop) {
         term.stop = false;
@@ -1333,7 +1334,7 @@
           break;
         case 13:
           if (typeof(need_check) != "undefined") {
-            send_command();
+            send_command('command');
           }
           key = "\r";
           break;
