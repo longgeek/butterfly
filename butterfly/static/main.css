@@ -3056,7 +3056,7 @@ body {
   overflow-y: scroll; }
   body::-webkit-scrollbar {
     background: transparent;
-    width: .75em; }
+    width: 2px; }
   body::-webkit-scrollbar-thumb {
     background: rgba(244, 234, 213, 0.1); }
   body::-webkit-scrollbar-thumb:hover {

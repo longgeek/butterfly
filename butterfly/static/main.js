@@ -2709,5 +2709,3 @@ $(document).ready(function() {
         $('html, body').css('background', '#0C1A25');
     }
 });
-
-//# sourceMappingURL=main.js.map
