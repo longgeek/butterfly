@@ -66,7 +66,9 @@
   font-weight: 900; }
 
 body {
-  font-family: "SourceCodePro";
+  font-family: monospace;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   line-height: 1.2; }
 
 /* You can comment / uncomment the following to enable/disable terminal effects. */
