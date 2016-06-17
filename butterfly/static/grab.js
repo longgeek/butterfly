@@ -23,8 +23,10 @@ messenger.listen(function(msg) {
         output = [];
         if (start_index !== cursor_index) {
             for ( j=start_index + 1; j<cursor_index; j++ ) {
-                if ( !/^\s+\.\.\.\:\s/.test(lines[j].innerText) && !eval("/\\s{" + lines[j].innerText.length + "}/").test(lines[j].innerText) ) {
+                if ( !/^\s+\.\.\.\:\s/.test(lines[j].innerText) && !eval("/\\s{" + lines[j].innerText.length + "}/").test(lines[j].innerText && !/^\s+\.\.\.\:\s/.test(lines[cursor_index].innerText)) ) {
                     output.push(lines[j].innerText);
+                } else {
+                  output = [];
                 }
             }
         }
