@@ -39,11 +39,16 @@ messenger.listen(function(msg) {
 
 function current_command(type) {
     if (type === "linuxbash") {
-        command = $(".line > .cursor").parent().text().split(/[#|$]\s/);
-        if ( $(".line > .cursor").parent().text().split(/[#|$]\s/).length === 2 ) {
+        command = $(".line > .cursor").parent().text().split(/[#,$]\s/);
+
+        if ( command.length === 2 ) {
             return command[1];
         } else {
-            return command[0];
+            if ( command[0].indexOf("reverse-i-search)`") !== -1 ) {
+                return command[0].split(/':\s/)[1];
+            } else {
+                return command[0];
+            }
         }
     } else if (type === "ipython") {
         regexp = new RegExp(/(In\s\[\d+\]:\s)/);
