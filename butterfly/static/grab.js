@@ -34,10 +34,13 @@ messenger.listen(function(msg) {
         messenger.targets["parent"].send(data);
     }
     need_check = true;
+    if (msg === 'idle-msg') { idle_check = true; }
+    else { idle_check = false; }
+
     topic_type = msg.topic_type;
 });
 
-function current_command(type) {
+function current_command(type, idle_check) {
     if (type === "linuxbash") {
         command = $(".line > .cursor").parent().text().split(/[#,$]\s/);
 
@@ -74,11 +77,13 @@ function current_command(type) {
             return commands[0].replace(/^In.\[[0-9]+\]:./, '').replace(/^\s*\.\.\.\:\s/, '').replace(/^>>>\s/, '').replace(/^\.\.\.\s/, '');
         }
     }
+
+    if (idle_check) { messenger.targets["parent"].send(JSON.stringify('idle-return')); }
 }
 
 function send_command(type, content) {
     if ( type === 'command' ) {
-        command = current_command(topic_type);
+        command = current_command(topic_type, idle_check);
         // 命令为多个空格组成
         if ( topic_type === "linuxbash" && eval("/\\s{" + command.length + "}/").test(command) ) {
             return;
